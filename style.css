@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 0;
+}
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/* #main{
+    height: 100%;
+    width: 100%;
+} */
+
+#page1{
+    min-height:100vw ;
+    width: 100%;
+    background-color: #EFEAE3;
+    position: relative;
+    padding: 0 2vw;
+}
+
+nav{
+    padding: 2vw 2vw;
+    width: 96%;
+
+    background-color:#EFEAE3 ;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* PUBG logo SIZE */
+.logo {
+    top: 10px;
+    right: 10px;
+    width: 80px;  
+}
+
+#nav_part1{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+#nav_part1 h4 {
+    padding: 10px 20px;
+    border: 1px solid rgba(2, 2, 2, 0.308); 
+    border-radius: 25px;
+    font-weight: 100;
+    color: rgba(2, 2, 2, 0.308);
+    position: relative;
+    overflow: hidden;
+}
+#nav_part1 h4::after{
+    content:"" ;
+    position: absolute;
+    height:100% ;
+    width: 100%;
+    left: 0;
+    background-color:black;
+    bottom: -100%;
+    transition: all ease 0.25s;
+    
+}
+#nav_part1 h4:hover::after{
+    bottom: 0;
+    border-radius: 25px;
+}
+#nav_part1 h4 a {
+    text-decoration: none;
+    color: black;
+    z-index: 9;
+    position: relative;
+}
+#nav_part1 h4:hover a{
+    color: #EFEAE3;
+}
+
+#center {
+    
+    height: 35vw;
+    width: 100%;
+    background-color: #EFEAE3;
+    display: flex;
+    align-items: end;
+    justify-content:space-between ;
+    border-bottom: 1px solid black;
+    padding-bottom: 2vw;
+
+}
+
+#left p{
+    width: 30vw;
+    font-size: 2vw;
+    font-weight: 700
+}
+
+#center h1{
+    font-size: 8vw;
+    align-items: flex-end ;
+    text-align: right;
+    
+}
+
+#video {
+    
+    
+    width: 100%;
+    margin-top: 3vw;
+    margin-bottom: 10vw;
+    
+    border-radius: 10px;
+    
+}
+
+#loader {
+    height:100%;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    transition: all ease 0.8s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loader h1{
+    color: transparent;
+    background: linear-gradient(to right,orange,red);
+    font-size : 5vw;
+    font-family: monospace;
+    -webkit-background-clip: text;
+}
+
+
+
