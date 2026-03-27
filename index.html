@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUBG resturant</title>
+    <title>PUBG Resturant</title>
+    <meta name="description" content="Winner Winner Chicken Dinner - PUBG themed restaurant experience">
+    <link rel="shortcut icon" href="Pubg resturant logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link href="style.css" rel="stylesheet">
 </head>
@@ -11,21 +13,19 @@
     <div id="loader">
         <h1>CHICKEN DINNER</h1>
     </div>
-    <div id="main">
-        <div id="page1">
+
+    <div id="main" data-scroll-container>
+        <div id="page1" data-scroll-section>
             <nav>
-                
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/PUBG_Mobile_simple_logo_black.png" alt="" class="logo">
-                
-                
-                <div id = "nav_part1">
-                    <h4><a href="">Work</a></h4>
-                    <h4><a href="">Studio</a></h4>
-                    <h4><a href="">Contack</a></h4>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/PUBG_Mobile_simple_logo_black.png" alt="PUBG Logo" class="logo">
 
+                <div id="nav_part1">
+                    <h4><a href="#">Work</a></h4>
+                    <h4><a href="#">Studio</a></h4>
+                    <h4><a href="#">Contact</a></h4>
                 </div>
-
             </nav>
+
             <div id="center">
                 <div id="left">    
                     <p>Winner winner chicken dinner served hot and fresh just like your PUBG gameplay victories packed for every intense battle and bold move</p>
@@ -35,17 +35,50 @@
                         THAT <br>
                         INSPIRE</h1>
                 </div>
-                
-
             </div>
-            
-            <video id="video"src="https://videos.pexels.com/video-files/1111420/1111420-hd_1920_1080_30fps.mp4" autoplay muted loop playsinline  ></video>
 
-            
+            <div class="video-container">
+                <video id="video" src="https://videos.pexels.com/video-files/1111420/1111420-hd_1920_1080_30fps.mp4" autoplay muted loop playsinline></video>
+            </div>
         </div>
-        
+
+        <div id="page2" data-scroll-section>
+            <div id="moving-text">
+                <div class="con">
+                    <h1>EXPERIENCE</h1>
+                    <div class="image-box gola"><img class="marquee-img" src="pubg resturant logo.png" alt="PUBG"></div>
+                    <h1>EMOTION</h1>
+                    <div class="image-box gola"><img class="marquee-img" src="pubg resturant logo.png" alt="PUBG"></div>
+                    <h1>GRIND</h1>
+                    <div class="image-box gola"><img class="marquee-img" src="pubg resturant logo.png" alt="PUBG"></div>
+                </div>
+                <div class="con">
+                    <h1>EXPERIENCE</h1>
+                    <div class="image-box gola"><img class="marquee-img" src="pubg resturant logo.png" alt="PUBG"></div>
+                    <h1>EMOTION</h1>
+                    <div class="image-box gola"><img class="marquee-img" src="pubg resturant logo.png" alt="PUBG"></div>
+                    <h1>GRIND</h1>
+                    <div class="image-box gola"><img class="pubg resturant logo.png" alt="PUBG"></div>
+                </div>
+            </div>
+
+            <div id="page2_bottom">
+                <h1>Welcome to Chicken Dinner Cafe the only battleground where grenades are spicy momos and loot crates. Remember: camp all you want, but you can't escape the Winner Winner Chicken Dinner!</h1>
+                <div id="bottom_part2">
+                    <img src="https://wstatic-prod-boc.krafton.com/common/content/media/20250507/7Jf9KClZ/31.2_SLB_KV.jpg" id="img" alt="PUBG Banner">
+                </div>
+            </div>
+        </div>
+
+        <div id="page3" data-scroll-section>
+            <div class="elem">
+                <h1>contacts</h1>
+                <h1>about</h1>
+            </div>
+        </div>
     </div>
 
+    <!-- locomotive-scroll -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="FIrst.js"></script>
 </body>
