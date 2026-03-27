@@ -17,7 +17,7 @@ html, body {
 }
 
 /* =============================================
-   LOADER — Sundown-style text sequence
+   LOADER
    ============================================= */
 
 #loader {
@@ -60,7 +60,6 @@ html, body {
     overflow: hidden;
 }
 
-/* Animated background blobs */
 #hero-shape {
     position: absolute;
     top: 0;
@@ -238,10 +237,9 @@ nav {
     min-height: 100vh;
     width: 100%;
     background-color: #EFEAE3;
-    padding: 0 3vw;
+    padding: 0;
+    position: relative;
 }
-
-/* MARQUEE */
 
 #moving-text {
     display: flex;
@@ -251,6 +249,7 @@ nav {
     border-top: 1px solid rgba(0, 0, 0, 0.15);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     padding: 2vw 0;
+    margin: 0 3vw;
 }
 
 .con {
@@ -263,12 +262,8 @@ nav {
 }
 
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-100% - 3vw));
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100% - 3vw)); }
 }
 
 .con h1 {
@@ -299,40 +294,78 @@ nav {
     filter: brightness(0) invert(1);
 }
 
-/* PAGE 2 BOTTOM */
+/* =============================================
+   CREATIVE BOTTOM SECTION (Sundown Style)
+   ============================================= */
 
-#page2_bottom {
-    padding: 5vw 0;
-}
-
-#page2_bottom h1 {
-    font-size: 3.2vw;
-    font-weight: 500;
-    line-height: 1.35;
-    margin-bottom: 4vw;
-    color: #000;
-    max-width: 65vw;
-}
-
-#bottom_part2 {
+#page2-bottom {
+    min-height: 80vh;
     width: 100%;
-    overflow: hidden;
-    border-radius: 14px;
+    padding: 4vw 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 9;
 }
 
-#bottom_part2 #img {
+#page2-bottom h1 {
+    font-size: 4.2vw;
+    width: 60%;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 700;
+    z-index: 9;
+}
+
+#bottom-part2 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    z-index: 9;
+}
+
+#bottom-part2 img {
     width: 100%;
-    display: block;
-    border-radius: 14px;
-    transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+    border-radius: 1vw;
+    aspect-ratio: 4/3;
+    object-fit: cover;
 }
 
-#bottom_part2:hover #img {
-    transform: scale(1.03);
+#bottom-part2 p {
+    font-size: 0.9vw;
+    line-height: 1.5;
+    font-weight: 400;
 }
+
+#gooey {
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    position: absolute;
+    top: 58%;
+    left: 25%;
+    background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+    filter: blur(40px);
+    z-index: 8;
+    animation: gooey 6s ease-in-out infinite alternate;
+}
+
+@keyframes gooey {
+    from {
+        filter: blur(40px);
+        transform: translate(10%, -10%) skew(0);
+    }
+    to {
+        filter: blur(60px);
+        transform: translate(-10%, 10%) skew(-12deg);
+    }
+}
+
 
 /* =============================================
-   PAGE 3 — PROJECTS / MENU LIST (Sundown style)
+   PAGE 3 — MENU LIST with hover images
    ============================================= */
 
 #page3 {
@@ -340,6 +373,8 @@ nav {
     width: 100%;
     background-color: #EFEAE3;
     padding: 5vw 3vw;
+    position: relative;
+    z-index: 10;
 }
 
 #page3-top {
@@ -364,14 +399,30 @@ nav {
     color: #000;
 }
 
+/* Fixed hover image that shows up on the right */
+#fixed-image {
+    height: 30vw;
+    width: 24vw;
+    position: fixed;
+    z-index: 99;
+    border-radius: 1vw;
+    left: 50%;
+    top: 25%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    pointer-events: none;
+}
+
 .elem {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.2vw 0;
+    padding: 2.2vw 2vw; 
     border-top: 1px solid rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    position: relative;
     transition: all 0.3s ease;
 }
 
@@ -379,8 +430,24 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-.elem:hover {
-    padding-left: 1vw;
+.elem .overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #ff9831;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    transition: all 0.25s ease;
+    z-index: 1;
+}
+
+.elem:hover .overlay {
+    top: 0;
+}
+
+.elem-left, .elem-right {
+    position: relative;
+    z-index: 2;
 }
 
 .elem-left h2 {
@@ -388,11 +455,6 @@ nav {
     font-weight: 700;
     color: #000;
     letter-spacing: -0.02em;
-    transition: color 0.3s ease;
-}
-
-.elem:hover .elem-left h2 {
-    color: #fe320a;
 }
 
 .elem-right {
@@ -431,7 +493,7 @@ nav {
 }
 
 /* =============================================
-   PAGE 4 — SPLIT SECTION (Design + Image)
+   PAGE 4 — SPLIT SECTION
    ============================================= */
 
 #page4 {
@@ -480,6 +542,9 @@ nav {
     flex: 1;
     overflow: hidden;
     border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
 }
 
 .split-right img {
@@ -493,6 +558,11 @@ nav {
 
 .split-right:hover img {
     transform: scale(1.04);
+}
+
+.split-right:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25),
+                0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* =============================================
